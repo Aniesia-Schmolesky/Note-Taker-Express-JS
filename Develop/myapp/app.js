@@ -19,4 +19,8 @@ module.exports = app => {
             updateDb();
             return console.log("Add note: "+ addNote.title);
         });
+
+        app.get("/api/notes/:id", function(req,res) {
+            res.json(notes[req.params.id]);
+        });
    
